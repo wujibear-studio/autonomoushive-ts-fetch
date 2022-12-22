@@ -13,7 +13,7 @@
  */
 
 
-export const BASE_PATH = "https://autonomous-hive-client.onrender.com/rest/v1".replace(/\/+$/, "");
+export const BASE_PATH = "https://autonomous-hive-api.onrender.com/rest/v1".replace(/\/+$/, "");
 
 export interface ConfigurationParameters {
     basePath?: string; // override base path
