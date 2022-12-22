@@ -1,4 +1,4 @@
-## autonomous-hive-sdk `0.0.1`
+## autonomoushive-ts-fetch `0.0.1`
 
 This is an SDK for interacting with the AutonomousHive API using a TypeScript/JavaScript client that utilizes [Fetch API](https://fetch.spec.whatwg.org/). 
 
@@ -23,19 +23,19 @@ navigate to the folder of your consuming project and run one of the following co
 
 If you use `npm`, run the following:
 ```
-npm install autonomous-hive-sdk@0.0.1 --save
+npm install autonomoushive-ts-fetch@0.0.1 --save
 ```
 
 Or if you use `yarn`, run the following:
 ```
-yarn add autonomous-hive-sdk
+yarn add autonomoushive-ts-fetch
 ```
 
 ## Usage
 
 To use our SDK in your app, import and set the configuration options like the following:
 ```
-import { Configuration, ConfigurationParameters, UsersApi } from 'autonomous-hive-sdk';
+import { Configuration, ConfigurationParameters, UsersApi } from 'autonomoushive-ts-fetch';
 
 const configParameters: ConfigurationParameters = {
   headers: {

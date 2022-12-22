@@ -1,7 +1,7 @@
 {
-  "name": "autonomous-hive-sdk",
+  "name": "autonomoushive-ts-fetch",
   "version": "0.0.1",
-  "description": "autonomous-hive-sdk is an SDK for formatting API calls to AHIVE using Typescript Fetch.",
+  "description": "autonomoushive-ts-fetch is an SDK for formatting API calls to AHIVE using Typescript Fetch.",
   "author": "OpenAPI Generator CLI",
   "repository": {
     "type": "git",
