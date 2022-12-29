@@ -29,6 +29,10 @@ export interface CreateSessionOperationRequest {
     createSessionRequest?: CreateSessionRequest;
 }
 
+export interface GetSessionRequest {
+    sessionToken: any;
+}
+
 /**
  * SessionsApi - interface
  * 
@@ -66,6 +70,22 @@ export interface SessionsApiInterface {
      * Delete Active Sessions
      */
     deleteSessions(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+
+    /**
+     * Retrieves Session details
+     * @summary Get Session
+     * @param {any} sessionToken An active session token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SessionsApiInterface
+     */
+    getSessionRaw(requestParameters: GetSessionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Session>>;
+
+    /**
+     * Retrieves Session details
+     * Get Session
+     */
+    getSession(requestParameters: GetSessionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Session>;
 
 }
 
@@ -130,6 +150,38 @@ export class SessionsApi extends runtime.BaseAPI implements SessionsApiInterface
      */
     async deleteSessions(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.deleteSessionsRaw(initOverrides);
+    }
+
+    /**
+     * Retrieves Session details
+     * Get Session
+     */
+    async getSessionRaw(requestParameters: GetSessionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Session>> {
+        if (requestParameters.sessionToken === null || requestParameters.sessionToken === undefined) {
+            throw new runtime.RequiredError('sessionToken','Required parameter requestParameters.sessionToken was null or undefined when calling getSession.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/sessions/{sessionToken}`.replace(`{${"sessionToken"}}`, encodeURIComponent(String(requestParameters.sessionToken))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SessionFromJSON(jsonValue));
+    }
+
+    /**
+     * Retrieves Session details
+     * Get Session
+     */
+    async getSession(requestParameters: GetSessionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Session> {
+        const response = await this.getSessionRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
 }
