@@ -9,7 +9,6 @@ export * from './CreateUserRequest';
 export * from './GetCells200Response';
 export * from './GetColonies200Response';
 export * from './GetUsers200Response';
-export * from './ModelError';
 export * from './ModelFile';
 export * from './PaginationMeta';
 export * from './Role';

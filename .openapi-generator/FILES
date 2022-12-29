@@ -5,7 +5,7 @@ README.md
 package.json
 src/apis/CellsApi.ts
 src/apis/ColoniesApi.ts
-src/apis/DefaultApi.ts
+src/apis/SessionsApi.ts
 src/apis/UsersApi.ts
 src/apis/index.ts
 src/index.ts
@@ -18,7 +18,6 @@ src/models/CreateUserRequest.ts
 src/models/GetCells200Response.ts
 src/models/GetColonies200Response.ts
 src/models/GetUsers200Response.ts
-src/models/ModelError.ts
 src/models/ModelFile.ts
 src/models/PaginationMeta.ts
 src/models/Role.ts
