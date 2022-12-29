@@ -20,11 +20,11 @@ import { exists, mapValues } from '../runtime';
  */
 export interface CreateSessionRequest {
     /**
-     * 
+     * A Users' email or handle
      * @type {any}
      * @memberof CreateSessionRequest
      */
-    email: any | null;
+    identifier: any | null;
     /**
      * 
      * @type {any}
@@ -38,7 +38,7 @@ export interface CreateSessionRequest {
  */
 export function instanceOfCreateSessionRequest(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "email" in value;
+    isInstance = isInstance && "identifier" in value;
     isInstance = isInstance && "password" in value;
 
     return isInstance;
@@ -54,7 +54,7 @@ export function CreateSessionRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'email': json['email'],
+        'identifier': json['identifier'],
         'password': json['password'],
     };
 }
@@ -68,7 +68,7 @@ export function CreateSessionRequestToJSON(value?: CreateSessionRequest | null):
     }
     return {
         
-        'email': value.email,
+        'identifier': value.identifier,
         'password': value.password,
     };
 }
