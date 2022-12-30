@@ -16,11 +16,17 @@
 import * as runtime from '../runtime';
 import type {
   CreateSessionRequest,
+  ErrorList,
+  GetSession404Response,
   Session,
 } from '../models';
 import {
     CreateSessionRequestFromJSON,
     CreateSessionRequestToJSON,
+    ErrorListFromJSON,
+    ErrorListToJSON,
+    GetSession404ResponseFromJSON,
+    GetSession404ResponseToJSON,
     SessionFromJSON,
     SessionToJSON,
 } from '../models';

@@ -16,6 +16,7 @@
 import * as runtime from '../runtime';
 import type {
   CreateUserRequest,
+  ErrorList,
   GetUsers200Response,
   Session,
   User,
@@ -23,6 +24,8 @@ import type {
 import {
     CreateUserRequestFromJSON,
     CreateUserRequestToJSON,
+    ErrorListFromJSON,
+    ErrorListToJSON,
     GetUsers200ResponseFromJSON,
     GetUsers200ResponseToJSON,
     SessionFromJSON,

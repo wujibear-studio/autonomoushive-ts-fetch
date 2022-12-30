@@ -17,6 +17,7 @@ import * as runtime from '../runtime';
 import type {
   Colony,
   ColonyParams,
+  ErrorList,
   GetColonies200Response,
 } from '../models';
 import {
@@ -24,6 +25,8 @@ import {
     ColonyToJSON,
     ColonyParamsFromJSON,
     ColonyParamsToJSON,
+    ErrorListFromJSON,
+    ErrorListToJSON,
     GetColonies200ResponseFromJSON,
     GetColonies200ResponseToJSON,
 } from '../models';

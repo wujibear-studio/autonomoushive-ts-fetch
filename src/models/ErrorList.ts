@@ -14,43 +14,43 @@
 
 import { exists, mapValues } from '../runtime';
 /**
- * 
+ * A list of Error details
  * @export
- * @interface GetColonies200Response
+ * @interface ErrorList
  */
-export interface GetColonies200Response {
+export interface ErrorList {
     /**
      * 
      * @type {any}
-     * @memberof GetColonies200Response
+     * @memberof ErrorList
      */
-    colonies?: any | null;
+    errors?: any | null;
 }
 
 /**
- * Check if a given object implements the GetColonies200Response interface.
+ * Check if a given object implements the ErrorList interface.
  */
-export function instanceOfGetColonies200Response(value: object): boolean {
+export function instanceOfErrorList(value: object): boolean {
     let isInstance = true;
 
     return isInstance;
 }
 
-export function GetColonies200ResponseFromJSON(json: any): GetColonies200Response {
-    return GetColonies200ResponseFromJSONTyped(json, false);
+export function ErrorListFromJSON(json: any): ErrorList {
+    return ErrorListFromJSONTyped(json, false);
 }
 
-export function GetColonies200ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): GetColonies200Response {
+export function ErrorListFromJSONTyped(json: any, ignoreDiscriminator: boolean): ErrorList {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         
-        'colonies': !exists(json, 'colonies') ? undefined : json['colonies'],
+        'errors': !exists(json, 'errors') ? undefined : json['errors'],
     };
 }
 
-export function GetColonies200ResponseToJSON(value?: GetColonies200Response | null): any {
+export function ErrorListToJSON(value?: ErrorList | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -59,7 +59,7 @@ export function GetColonies200ResponseToJSON(value?: GetColonies200Response | nu
     }
     return {
         
-        'colonies': value.colonies,
+        'errors': value.errors,
     };
 }
 

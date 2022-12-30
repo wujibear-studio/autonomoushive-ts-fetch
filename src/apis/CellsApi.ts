@@ -16,11 +16,14 @@
 import * as runtime from '../runtime';
 import type {
   Cell,
+  ErrorList,
   GetCells200Response,
 } from '../models';
 import {
     CellFromJSON,
     CellToJSON,
+    ErrorListFromJSON,
+    ErrorListToJSON,
     GetCells200ResponseFromJSON,
     GetCells200ResponseToJSON,
 } from '../models';
