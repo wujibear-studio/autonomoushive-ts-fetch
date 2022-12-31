@@ -20,16 +20,6 @@ import type {
   GetSession404Response,
   Session,
 } from '../models';
-import {
-    CreateSessionRequestFromJSON,
-    CreateSessionRequestToJSON,
-    ErrorListFromJSON,
-    ErrorListToJSON,
-    GetSession404ResponseFromJSON,
-    GetSession404ResponseToJSON,
-    SessionFromJSON,
-    SessionToJSON,
-} from '../models';
 
 export interface CreateSessionOperationRequest {
     createSessionRequest?: CreateSessionRequest;
@@ -116,10 +106,10 @@ export class SessionsApi extends runtime.BaseAPI implements SessionsApiInterface
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CreateSessionRequestToJSON(requestParameters.createSessionRequest),
+            body: requestParameters.createSessionRequest,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => SessionFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -178,7 +168,7 @@ export class SessionsApi extends runtime.BaseAPI implements SessionsApiInterface
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => SessionFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**

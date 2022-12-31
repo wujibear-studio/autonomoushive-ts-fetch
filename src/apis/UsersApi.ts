@@ -21,18 +21,6 @@ import type {
   Session,
   User,
 } from '../models';
-import {
-    CreateUserRequestFromJSON,
-    CreateUserRequestToJSON,
-    ErrorListFromJSON,
-    ErrorListToJSON,
-    GetUsers200ResponseFromJSON,
-    GetUsers200ResponseToJSON,
-    SessionFromJSON,
-    SessionToJSON,
-    UserFromJSON,
-    UserToJSON,
-} from '../models';
 
 export interface CreateUserOperationRequest {
     createUserRequest?: CreateUserRequest;
@@ -148,10 +136,10 @@ export class UsersApi extends runtime.BaseAPI implements UsersApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CreateUserRequestToJSON(requestParameters.createUserRequest),
+            body: requestParameters.createUserRequest,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => SessionFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -183,7 +171,7 @@ export class UsersApi extends runtime.BaseAPI implements UsersApiInterface {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => UserFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -219,7 +207,7 @@ export class UsersApi extends runtime.BaseAPI implements UsersApiInterface {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => GetUsers200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -251,10 +239,10 @@ export class UsersApi extends runtime.BaseAPI implements UsersApiInterface {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: UserToJSON(requestParameters.user),
+            body: requestParameters.user,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => UserFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**

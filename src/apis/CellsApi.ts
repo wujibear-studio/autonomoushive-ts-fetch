@@ -19,14 +19,6 @@ import type {
   ErrorList,
   GetCells200Response,
 } from '../models';
-import {
-    CellFromJSON,
-    CellToJSON,
-    ErrorListFromJSON,
-    ErrorListToJSON,
-    GetCells200ResponseFromJSON,
-    GetCells200ResponseToJSON,
-} from '../models';
 
 export interface CreateCellRequest {
     colonyId?: any;
@@ -150,10 +142,10 @@ export class CellsApi extends runtime.BaseAPI implements CellsApiInterface {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CellToJSON(requestParameters.cell),
+            body: requestParameters.cell,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => CellFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -189,7 +181,7 @@ export class CellsApi extends runtime.BaseAPI implements CellsApiInterface {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => CellFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -225,7 +217,7 @@ export class CellsApi extends runtime.BaseAPI implements CellsApiInterface {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => GetCells200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -257,10 +249,10 @@ export class CellsApi extends runtime.BaseAPI implements CellsApiInterface {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: CellToJSON(requestParameters.cell),
+            body: requestParameters.cell,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => CellFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**

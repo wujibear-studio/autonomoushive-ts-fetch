@@ -20,16 +20,6 @@ import type {
   ErrorList,
   GetColonies200Response,
 } from '../models';
-import {
-    ColonyFromJSON,
-    ColonyToJSON,
-    ColonyParamsFromJSON,
-    ColonyParamsToJSON,
-    ErrorListFromJSON,
-    ErrorListToJSON,
-    GetColonies200ResponseFromJSON,
-    GetColonies200ResponseToJSON,
-} from '../models';
 
 export interface CreateColonyRequest {
     colonyParams?: ColonyParams;
@@ -145,10 +135,10 @@ export class ColoniesApi extends runtime.BaseAPI implements ColoniesApiInterface
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ColonyParamsToJSON(requestParameters.colonyParams),
+            body: requestParameters.colonyParams,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => ColonyFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -184,7 +174,7 @@ export class ColoniesApi extends runtime.BaseAPI implements ColoniesApiInterface
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => GetColonies200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -216,7 +206,7 @@ export class ColoniesApi extends runtime.BaseAPI implements ColoniesApiInterface
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => ColonyFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
@@ -248,10 +238,10 @@ export class ColoniesApi extends runtime.BaseAPI implements ColoniesApiInterface
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: ColonyParamsToJSON(requestParameters.colonyParams),
+            body: requestParameters.colonyParams,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => ColonyFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response);
     }
 
     /**
