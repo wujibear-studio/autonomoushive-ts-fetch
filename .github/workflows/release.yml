@@ -14,17 +14,10 @@ jobs:
     - uses: actions/checkout@v3
       name: Checkout code
 
-    - name: testy
-      env:
-        tag: "TAGMEISTER"
-      run: echo "$(npm pkg get version | xargs) - $TAG - $(echo $TAG)"
-
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
-      env:
-        VERSION: $(echo npm pkg get version)
       with:
-        tag: sometag-a$(echo $VERSION)
+        tag: $(npm pkg get version | xargs)
         generateReleaseNotes: true
 
     # - uses: mikeal/merge-release@master
