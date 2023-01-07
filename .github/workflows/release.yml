@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  lint-code:
+  release:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,7 +20,7 @@ jobs:
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
       with:
-        tag: v${{ env.VERSION }}
+        tag: ${{ env.VERSION }}
         generateReleaseNotes: true
 
     - uses: mikeal/merge-release@master
