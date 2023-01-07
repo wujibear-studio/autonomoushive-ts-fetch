@@ -15,12 +15,14 @@ jobs:
       name: Checkout code
 
     - name: Set Version
-      run: echo "VERSION=$(npm pkg get version)" >> $GITHUB_ENV
+      env: 
+        VERSION: $(npm pkg get version)
+      # run: echo "VERSION=$(npm pkg get version)" >> $GITHUB_ENV
 
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
       with:
-        tag: ${{ env.VERSION }}
+        tag: $VERSION
         generateReleaseNotes: true
 
     - uses: mikeal/merge-release@master
