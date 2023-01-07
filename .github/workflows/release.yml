@@ -17,9 +17,9 @@ jobs:
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
       env:
-        VERSION: $(npm pkg get version)
+        VERSION: $(echo npm pkg get version)
       with:
-        tag: $VERSION
+        tag: $(echo $VERSION)
         generateReleaseNotes: true
 
     # - uses: mikeal/merge-release@master
