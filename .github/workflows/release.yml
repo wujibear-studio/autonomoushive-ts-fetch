@@ -18,4 +18,4 @@ jobs:
       env: 
         VERSION: $(npm pkg get version)
       # run: echo "VERSION=$(npm pkg get version)" >> $GITHUB_ENV
-      run: echo "$VERSION or ${{$VERSION}}"
+      run: echo "${{$VERSION}}"
