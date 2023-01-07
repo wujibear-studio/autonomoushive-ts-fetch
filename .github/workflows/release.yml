@@ -18,15 +18,4 @@ jobs:
       env: 
         VERSION: $(npm pkg get version)
       # run: echo "VERSION=$(npm pkg get version)" >> $GITHUB_ENV
-
-    - name: Create a GitHub release
-      uses: ncipollo/release-action@v1
-      with:
-        tag: $VERSION
-        generateReleaseNotes: true
-
-    - uses: mikeal/merge-release@master
-      name: Update Registry
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      run: echo "$VERSION or ${{$VERSION}}"
