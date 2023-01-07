@@ -19,7 +19,7 @@ jobs:
       env:
         VERSION: $(echo npm pkg get version)
       with:
-        tag: $(echo $VERSION)
+        tag: sometag-a$(echo $VERSION)
         generateReleaseNotes: true
 
     # - uses: mikeal/merge-release@master
