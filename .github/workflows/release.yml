@@ -14,10 +14,13 @@ jobs:
     - uses: actions/checkout@v3
       name: Checkout code
 
+    - name: Set Version
+      run: echo "VERSION=$(npm pkg get version | xargs)" >> $GITHUB_ENV
+
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
       with:
-        tag: $(npm pkg get version | xargs)
+        tag: ${{env.VERSION}}
         generateReleaseNotes: true
 
     # - uses: mikeal/merge-release@master
