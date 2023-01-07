@@ -15,9 +15,9 @@ jobs:
       name: Checkout code
 
     - name: testy
-      run: echo "$(npm pkg get version) $TAG"
       env:
-        tag: TAGMEISTER
+        tag: "TAGMEISTER"
+      run: echo "$(npm pkg get version) - $TAG - $(echo $TAG)"
 
     - name: Create a GitHub release
       uses: ncipollo/release-action@v1
