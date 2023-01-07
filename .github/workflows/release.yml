@@ -16,7 +16,7 @@ jobs:
 
     - name: testy
       run: echo "$(npm pkg get version) $TAG"
-      with:
+      env:
         tag: TAGMEISTER
 
     - name: Create a GitHub release
