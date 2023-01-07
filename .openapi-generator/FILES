@@ -5,6 +5,7 @@ README.md
 package.json
 src/apis/CellsApi.ts
 src/apis/ColoniesApi.ts
+src/apis/DefaultApi.ts
 src/apis/SessionsApi.ts
 src/apis/UsersApi.ts
 src/apis/index.ts
