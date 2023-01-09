@@ -1,6 +1,4 @@
-.gitignore
 .npmignore
-.openapi-generator-ignore
 README.md
 package.json
 src/apis/CellsApi.ts

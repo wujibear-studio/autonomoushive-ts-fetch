@@ -1,4 +1,4 @@
-## autonomoushive-ts-fetch `0.0.2`
+## autonomoushive-ts-fetch `0.0.3`
 
 This is an SDK for interacting with the AutonomousHive API using a TypeScript/JavaScript client that utilizes [Fetch API](https://fetch.spec.whatwg.org/). 
 
@@ -23,7 +23,7 @@ navigate to the folder of your consuming project and run one of the following co
 
 If you use `npm`, run the following:
 ```
-npm install autonomoushive-ts-fetch@0.0.2 --save
+npm install autonomoushive-ts-fetch@0.0.3 --save
 ```
 
 Or if you use `yarn`, run the following:

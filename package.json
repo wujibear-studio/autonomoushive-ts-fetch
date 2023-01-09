@@ -1,6 +1,6 @@
 {
   "name": "autonomoushive-ts-fetch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "autonomoushive-ts-fetch is an SDK for formatting API calls to AHIVE using Typescript Fetch.",
   "author": "OpenAPI Generator CLI",
   "repository": {
